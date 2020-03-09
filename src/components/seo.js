@@ -30,8 +30,6 @@ const SEO = ({ description, lang, meta, title, image, slug }) => {
   const ogImageUrl = siteUrl + (image || defaultOpenGraphImage);
   const url = siteUrl + slug;
 
-  console.log("siteUrl :", site.siteMetadata.siteUrl);
-
   return (
     <Helmet
       htmlAttributes={{
