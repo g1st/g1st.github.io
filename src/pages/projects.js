@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 
 import SEO from "../components/seo";
-import { sizes } from "../styles/variables";
 import { media } from "../styles/mixins";
 import Portfolio from "../components/Portfolio/portfolio";
 
@@ -22,7 +21,6 @@ const Heading = styled.h2`
 `;
 
 const ProjectsPage = ({ location }) => {
-  const theme = useContext(ThemeContext);
   return (
     <Container>
       <SEO title="Projects" slug={location.pathname} />

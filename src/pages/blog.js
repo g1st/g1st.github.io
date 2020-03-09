@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import styled, { ThemeContext } from "styled-components";
+import React from "react";
+import styled from "styled-components";
 import Img from "gatsby-image";
 import { Link, graphql } from "gatsby";
 
@@ -42,8 +42,6 @@ const Image = styled(Img)`
 `;
 
 const Blog = ({ data, location }) => {
-  const theme = useContext(ThemeContext);
-
   const posts = data.allMdx.nodes;
 
   return (

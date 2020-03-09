@@ -41,6 +41,7 @@ const TypeWriter = ({ messages, heading }) => {
     };
     handleType();
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.isDeleting]);
 
   useEffect(() => {
@@ -70,7 +71,7 @@ const TypeWriter = ({ messages, heading }) => {
     }
 
     return () => clearTimeout(timer);
-  }, [state.text, state.message, state.isDeleting, messages]);
+  }, [state.text, state.message, state.isDeleting, messages, state.loopNum]);
 
   const getCurrentText = currentState =>
     currentState.isDeleting

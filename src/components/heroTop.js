@@ -40,18 +40,6 @@ const Heading = styled.h1`
   `}
 `;
 
-const Text = styled.p`
-  font-size: 1.5rem;
-
-  ${media.sm`
-    font-size: 2rem;
-  `}
-
-  ${media.md`
-    font-size: 3rem;
-  `}
-`;
-
 const HeroTop = () => (
   <Container>
     <TextBlock>

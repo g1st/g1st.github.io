@@ -48,6 +48,11 @@ const ToolsUsed = props => (
         <ExpressSVG />
       </Tool>
     )}
+    {props.react && (
+      <Tool>
+        <ReactSVG />
+      </Tool>
+    )}
     {props.nextjs && (
       <Tool>
         <NextSVG />
