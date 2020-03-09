@@ -25,7 +25,7 @@ const ProjectsPage = ({ location }) => {
   const theme = useContext(ThemeContext);
   return (
     <Container>
-      <SEO title="Gintaras Stankus - Projects" />
+      <SEO title="Projects" slug={location.pathname} />
       <Heading>Projects</Heading>
       <Portfolio />
     </Container>

@@ -48,7 +48,7 @@ const Blog = ({ data, location }) => {
 
   return (
     <Container>
-      <SEO title="Gintaras Stankus | Blog" />
+      <SEO title="Blog" slug={location.pathname} />
       <Heading>Blog</Heading>
 
       {posts.map(node => (

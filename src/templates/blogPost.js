@@ -44,23 +44,22 @@ const NavigationList = styled.ul`
 const Blog = ({ data, pageContext, location }) => {
   const { frontmatter, excerpt, body } = data.mdx;
   const { previous, next } = pageContext;
-
-  console.log("pageContext", pageContext);
-  console.log("data :", data);
-  console.log("location :", location);
+  const { cover } = frontmatter;
+  const coverPath = cover && cover.childImageSharp.fixed.src;
 
   return (
     <Container>
       <SEO
         title={frontmatter.title}
         description={frontmatter.description || excerpt}
+        image={coverPath}
+        slug={pageContext.slug}
       />
       <Article>
         <Header>
           <Heading>{frontmatter.title}</Heading>
           <Date>{frontmatter.date}</Date>
         </Header>
-        {/* <section dangerouslySetInnerHTML={{ __html: post.html }} /> */}
         <MDXRenderer>{body}</MDXRenderer>
       </Article>
 
@@ -98,11 +97,6 @@ export default Blog;
 
 export const pageQuery = graphql`
   query PostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(fields: { slug: { eq: $slug } }) {
       id
       excerpt
@@ -111,6 +105,13 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         description
         title
+        cover {
+          childImageSharp {
+            fixed {
+              src
+            }
+          }
+        }
       }
     }
   }

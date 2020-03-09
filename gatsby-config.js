@@ -1,13 +1,13 @@
 const siteMetadata = {
   title: `Gintaras Stankus`,
   description: `Gintaras Stankus portfolio website.`,
-  image: `/default-site-image.jpg`,
-  siteUrl: `https://www.stankusgintaras.com`,
+  image: `/static/favicon.png`,
+  siteUrl: `http://localhost:8000`,
   siteLanguage: `en-GB`,
   siteLocale: `en_gb`,
   twitterUsername: `@g1stas`,
-  author: `@g1st`,
-  authorName: `Gintaras Stankus`,
+  twitter: `@g1st`,
+  author: `Gintaras Stankus`,
 };
 
 module.exports = {
@@ -61,7 +61,7 @@ module.exports = {
         background_color: `#051622`,
         theme_color: `#051622`,
         display: `minimal-ui`,
-        icon: `src/assets/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `static/favicon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-layout`,

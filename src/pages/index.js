@@ -9,7 +9,7 @@ const IndexPage = () => {
   const theme = useContext(ThemeContext);
   return (
     <>
-      <SEO title="Gintaras Stankus" />
+      <SEO title="Home" />
       <Hero />
     </>
   );
