@@ -2,7 +2,7 @@ const siteMetadata = {
   title: `Gintaras Stankus`,
   description: `Gintaras Stankus portfolio website.`,
   image: `/static/favicon.png`,
-  siteUrl: `http://localhost:8000`,
+  siteUrl: `https://kind-elion-8308cd.netlify.com`,
   siteLanguage: `en-GB`,
   siteLocale: `en_gb`,
   twitterUsername: `@g1stas`,
