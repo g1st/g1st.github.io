@@ -6,7 +6,7 @@ import styled, { ThemeContext } from "styled-components";
 import { media } from "../styles/mixins";
 import { sizes } from "../styles/variables";
 import ToggleIcon from "../assets/invert_colors-24px.svg";
-import HomeIcon from "../assets/home-24px.svg";
+import GSLogo from "../assets/gs-logo.svg";
 
 const Container = styled.header`
   height: ${sizes.headerHeight};
@@ -67,7 +67,7 @@ const Header = ({ toggleTheme, path }) => {
       {path !== "/" && (
         <HomeContainer title="Home" aria-label="Home">
           <Link to="/">
-            <HomeIcon style={{ fill: theme.colors.themeToggle }} />
+            <GSLogo style={{ fill: theme.colors.themeToggle }} />
           </Link>
         </HomeContainer>
       )}
