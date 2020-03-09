@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import lightTheme from "prism-react-renderer/themes/nightOwlLight";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
@@ -37,6 +37,7 @@ const CopyCode = styled.button`
   border-radius: 3px;
   margin: 0.25em;
   opacity: 0.3;
+  transition: all 0.1s linear;
 
   &:hover {
     opacity: 1;
@@ -44,10 +45,16 @@ const CopyCode = styled.button`
 `;
 
 const SyntaxHighlighter = ({ children: { props } }) => {
+  const [timerID, setTimerID] = useState("");
+  const [copyText, setCopyText] = useState("Copy");
   const theme = useContext(ThemeContext);
 
   const handleClick = () => {
     copyToClipboard(props.children.trim());
+    clearTimeout(timerID);
+    setCopyText("Copied!");
+    const timer = setTimeout(() => setCopyText("Copy"), 5000);
+    setTimerID(timer);
   };
 
   if (props.mdxType === "code") {
@@ -67,7 +74,12 @@ const SyntaxHighlighter = ({ children: { props } }) => {
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <Pre className={className} style={style}>
-            <CopyCode onClick={handleClick}>Copy</CopyCode>
+            <CopyCode
+              onClick={handleClick}
+              style={{ opacity: `${copyText === "Copied!" ? "1" : "0.3"}` }}
+            >
+              {copyText}
+            </CopyCode>
             {tokens.map((line, i) => (
               <div {...getLineProps({ line, key: i })}>
                 <LineNo>{i + 1}</LineNo>
