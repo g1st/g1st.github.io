@@ -24,14 +24,8 @@ const Nav = styled.nav`
 `;
 
 const ButtonWrapper = styled.ul`
-  /* transform: translateX(-87%); */
   list-style: none;
   margin-bottom: 0;
-
-  > a {
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.text};
-  }
 `;
 
 const Button = styled.li`
@@ -42,12 +36,13 @@ const Button = styled.li`
   width: 10rem;
   transition: all 0.2s cubic-bezier(0.22, 0.68, 0, 1.71);
   display: flex;
+  align-items: center;
   transform: translateX(0);
 
   &:hover {
     cursor: pointer;
     transform: translateX(50%);
-    & > span {
+    a > span {
       opacity: 1;
       margin-left: 1.4rem;
     }
@@ -67,20 +62,21 @@ const Menu = () => {
   return (
     <Nav>
       <ButtonWrapper>
-        <Link to="/blog/" aria-label="View blogs page">
-          <Button>
+        <Button>
+          <Link to="/blog/" aria-label="View blogs page">
             <Text>Blog</Text>
             <BlogIcon
               style={{
                 fill: theme.colors.text,
                 right: "0.8rem",
+
                 position: "absolute",
               }}
             />
-          </Button>
-        </Link>
-        <Link to="/projects/" aria-label="View projects page">
-          <Button>
+          </Link>
+        </Button>
+        <Button>
+          <Link to="/projects/" aria-label="View projects page">
             <Text>Projects</Text>
             <CodeIcon
               style={{
@@ -89,10 +85,10 @@ const Menu = () => {
                 position: "absolute",
               }}
             />
-          </Button>
-        </Link>
-        <Link to="/projects/" aria-label="View contacts page">
-          <Button>
+          </Link>
+        </Button>
+        <Button>
+          <Link to="/projects/" aria-label="View contacts page">
             <Text>Contact</Text>
             <MailIcon
               style={{
@@ -101,8 +97,8 @@ const Menu = () => {
                 position: "absolute",
               }}
             />
-          </Button>
-        </Link>
+          </Link>
+        </Button>
       </ButtonWrapper>
     </Nav>
   );
