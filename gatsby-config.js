@@ -1,16 +1,53 @@
+const siteMetadata = {
+  title: `Gintaras Stankus`,
+  description: `Gintaras Stankus portfolio website.`,
+  image: `/default-site-image.jpg`,
+  siteUrl: `https://www.stankusgintaras.com`,
+  siteLanguage: `en-GB`,
+  siteLocale: `en_gb`,
+  twitterUsername: `@g1stas`,
+  author: `@g1st`,
+  authorName: `Gintaras Stankus`,
+};
+
 module.exports = {
-  siteMetadata: {
-    title: `g1st portfolio`,
-    description: `Portfolio website.`,
-    author: `@g1st`,
-  },
+  siteMetadata,
   plugins: [
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/assets/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
       },
     },
     `gatsby-transformer-sharp`,

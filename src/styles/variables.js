@@ -4,3 +4,7 @@ export const breakpoints = {
   md: "992px",
   lg: "1200px",
 };
+
+export const sizes = {
+  headerHeight: "6rem",
+};

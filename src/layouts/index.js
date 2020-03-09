@@ -10,18 +10,15 @@ import PropTypes from "prop-types";
 import styled, { ThemeProvider } from "styled-components";
 
 import Header from "../components/header";
+import Footer from "../components/footer";
 import Menu from "../components/menu";
 import { dark, light } from "../styles/theme";
 import { GlobalStyle } from "../styles/globalStyle";
 import { useDarkMode } from "../hooks/useDarkTheme";
 import "../styles/layout.css";
 
-const Container = styled.div`
+const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.primary};
-
-  main > div {
-    /* overflow-x visible; */
-  }
 `;
 
 const Layout = ({ path, children }) => {
@@ -37,9 +34,8 @@ const Layout = ({ path, children }) => {
         <GlobalStyle />
         <Header toggleTheme={setTheme} path={path} />
         <Menu />
-        <Container>
-          <main>{children}</main>
-        </Container>
+        <Main>{children}</Main>
+        <Footer />
       </ThemeProvider>
     </>
   );

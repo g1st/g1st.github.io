@@ -1,11 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+import TypeWriter from "./TypeWriter";
 import { media } from "../styles/mixins";
 
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
-  height: 59vh;
+  height: 60vh;
   transform: skewY(-10deg);
   transform-origin: bottom left;
   position: relative;
@@ -55,7 +56,14 @@ const HeroTop = () => (
   <Container>
     <TextBlock>
       <Heading>Hi, I am Johnatan</Heading>
-      <Text>front end web developer</Text>
+      <TypeWriter
+        messages={[
+          "front end developer",
+          "back end developer",
+          "full stack developer",
+        ]}
+        speed={500}
+      />
     </TextBlock>
   </Container>
 );

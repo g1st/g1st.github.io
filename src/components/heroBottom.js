@@ -5,7 +5,7 @@ import { media } from "../styles/mixins";
 
 const Container = styled.div`
   background: ${({ theme }) => theme.colors.secondary};
-  height: 41vh;
+  height: 40vh;
 `;
 
 const TextBlock = styled.div`
@@ -17,7 +17,6 @@ const TextBlock = styled.div`
   `}
 
   ${media.md`
-    /* padding-top: 4rem; */
     padding-top: 0;
     margin-right: 15%;
   `}

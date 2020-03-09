@@ -5,17 +5,26 @@ import { Link } from "gatsby";
 import BlogIcon from "../assets/menu_book-24px.svg";
 import CodeIcon from "../assets/code-24px.svg";
 import MailIcon from "../assets/email-24px.svg";
+import { media } from "../styles/mixins";
 
 const Nav = styled.nav`
   position: fixed;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
   z-index: 100;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 92%) rotate(-90deg);
+
+  ${media.md`
+    left: 0;
+    top: 50%;
+    bottom: unset;
+
+    transform: translate(-77%, -50%) rotate(0);
+  `}
 `;
 
 const ButtonWrapper = styled.ul`
-  transform: translateX(-87%);
+  /* transform: translateX(-87%); */
   list-style: none;
   margin-bottom: 0;
 
@@ -58,7 +67,7 @@ const Menu = () => {
   return (
     <Nav>
       <ButtonWrapper>
-        <Link to="/projects/">
+        <Link to="/blog/" aria-label="View blogs page">
           <Button>
             <Text>Blog</Text>
             <BlogIcon
@@ -70,7 +79,7 @@ const Menu = () => {
             />
           </Button>
         </Link>
-        <Link to="/projects/">
+        <Link to="/projects/" aria-label="View projects page">
           <Button>
             <Text>Projects</Text>
             <CodeIcon
@@ -82,7 +91,7 @@ const Menu = () => {
             />
           </Button>
         </Link>
-        <Link to="/projects/">
+        <Link to="/projects/" aria-label="View contacts page">
           <Button>
             <Text>Contact</Text>
             <MailIcon

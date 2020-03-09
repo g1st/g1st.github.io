@@ -4,28 +4,27 @@ import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 
 import { media } from "../styles/mixins";
+import { sizes } from "../styles/variables";
 import ToggleIcon from "../assets/invert_colors-24px.svg";
 import HomeIcon from "../assets/home-24px.svg";
 
 const Container = styled.header`
-  position: absolute;
-  height: 200px;
-  width: 100%;
-  z-index: 2;
+  height: ${sizes.headerHeight};
 `;
 
-const ToggleContainer = styled.div`
+const ToggleContainer = styled.button`
+  background: none;
+  border: none;
+  outline: none;
   position: absolute;
-  top: 10%;
+  top: 4%;
   right: 5%;
   z-index: 2;
 
   ${media.xs`
-    top: 20%;
   `}
 
   ${media.sm`
-    top: 30%;
   `}
 
   &:hover {
@@ -43,29 +42,20 @@ const ToggleContainer = styled.div`
 `;
 const HomeContainer = styled.div`
   position: absolute;
-  top: 10%;
+  top: 4%;
   left: 5%;
   z-index: 2;
 
   ${media.xs`
-    top: 20%;
+    /* top: 20%; */
   `}
 
   ${media.sm`
-    top: 30%;
+    /* top: 30%; */
   `}
 
   &:hover {
     cursor: pointer;
-  }
-
-  svg {
-    transition: all 0.3s linear;
-
-    &:first-child {
-      transform: ${({ theme: { name } }) =>
-        name === "dark" ? "rotateY(0)" : "rotateY(180deg)"};
-    }
   }
 `;
 
@@ -75,13 +65,20 @@ const Header = ({ toggleTheme, path }) => {
   return (
     <Container>
       {path !== "/" && (
-        <HomeContainer>
+        <HomeContainer title="Home" aria-label="Home">
           <Link to="/">
             <HomeIcon style={{ fill: theme.colors.themeToggle }} />
           </Link>
         </HomeContainer>
       )}
-      <ToggleContainer>
+      <ToggleContainer
+        aria-label={
+          theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
+        }
+        title={
+          theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
+        }
+      >
         <ToggleIcon
           style={{ fill: theme.colors.themeToggle }}
           onClick={toggleTheme}
