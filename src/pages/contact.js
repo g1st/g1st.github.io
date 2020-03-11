@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { navigate } from 'gatsby';
+import { navigate } from "gatsby";
 import styled from "styled-components";
 
-import SEO from '../components/seo';
+import SEO from "../components/seo";
 import { Button } from "../styles/mixins";
 
 const Container = styled.div`
@@ -73,12 +73,12 @@ const Contact = () => {
 
   return (
     <Container>
-      <SEO title="Contact">
+      <SEO title="Contact" />
       <Heading>Contact</Heading>
       <Text>
         Have a question or looking to work together?Feel free to contact me!
       </Text>
-      <Form name="contact" method="POST" action="thanks" data-netlify="true">
+      <Form name="contact" method="POST" action="/thanks" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
         <Input
           onChange={handleChange}
