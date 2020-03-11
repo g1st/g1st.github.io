@@ -50,14 +50,10 @@ const Contact = () => (
       Have a question or looking to work together?Feel free to contact me!
     </Text>
     <Form
-      name="contact2"
+      name="contact"
       method="post"
-      action="/thanks"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
+      action="https://getform.io/f/62f6d9a0-958e-4fe3-81c1-b0edb9d27639"
     >
-      <input type="hidden" name="form-name" value="contact2" />
-      <input type="hidden" name="bot-field" />
       <Input name="email" type="email" placeholder="Email" required />
       <Message
         name="message"
