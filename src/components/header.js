@@ -32,7 +32,7 @@ const ToggleContainer = styled.button`
   }
 
   svg {
-    transition: all 0.3s linear;
+    transition: all 0.2s linear;
 
     &:first-child {
       transform: ${({ theme: { name } }) =>
