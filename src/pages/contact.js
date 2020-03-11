@@ -83,7 +83,7 @@ const Contact = () => {
         action="/thanks"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
-        onSubmit={handleSUbmit}
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
         <Input hidden name="bot-field" onChange={handleChange} />
