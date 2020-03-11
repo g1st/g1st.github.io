@@ -21,6 +21,12 @@ const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
 const Layout = ({ path, children }) => {
   const [theme, setTheme, componentMounted] = useDarkMode();
 
@@ -32,10 +38,12 @@ const Layout = ({ path, children }) => {
     <>
       <ThemeProvider theme={theme === "dark" ? dark : light}>
         <GlobalStyle />
-        <Header toggleTheme={setTheme} path={path} />
-        <Menu />
-        <Main>{children}</Main>
-        <Footer />
+        <ContentWrapper>
+          <Header toggleTheme={setTheme} path={path} />
+          <Menu />
+          <Main>{children}</Main>
+          <Footer />
+        </ContentWrapper>
       </ThemeProvider>
     </>
   );
