@@ -48,8 +48,9 @@ const Contact = () => (
       Have a question or looking to work together? Feel free to contact me!
     </Text>
     <Form name="contact" method="POST" data-netlify="true">
-      <Input type="email" placeholder="Email" required />
+      <Input name="email" type="email" placeholder="Email" required />
       <Message
+        name="message"
         placeholder="Message"
         rows="10"
         cols="50"
