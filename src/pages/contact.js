@@ -86,7 +86,7 @@ const Contact = () => {
         onSubmit={handleSubmit}
       >
         <input type="hidden" name="form-name" value="contact" />
-        <Input hidden name="bot-field" onChange={handleChange} />
+        <input type="hidden" name="bot-field" />
         <Input
           onChange={handleChange}
           name="email"
