@@ -47,7 +47,7 @@ const Contact = () => (
     <Text>
       Have a question or looking to work together? Feel free to contact me!
     </Text>
-    <Form name="contact" method="POST" data-netlify="true">
+    <Form name="contact" method="POST" action="/" netlify>
       <Input name="email" type="email" placeholder="Email" required />
       <Message
         name="message"
