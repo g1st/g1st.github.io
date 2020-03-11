@@ -8,7 +8,6 @@ export const dark = {
     themeToggle: "#ffffff",
     footer: "#000000",
   },
-  transitionBackground: "#C42021",
 };
 
 export const light = {
@@ -21,5 +20,4 @@ export const light = {
     themeToggle: "#2e2e2e",
     footer: "#9fa9a3",
   },
-  transitionBackground: "#9fa9a3",
 };
