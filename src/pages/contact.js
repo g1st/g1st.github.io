@@ -49,7 +49,7 @@ const Contact = () => (
     <Text>
       Have a question or looking to work together?Feel free to contact me!
     </Text>
-    <Form
+    <form
       name="contact"
       method="post"
       action="/thanks"
@@ -58,8 +58,8 @@ const Contact = () => (
     >
       <input type="hidden" name="form-name" value="contact" />
       <input type="hidden" name="bot-field" />
-      <Input name="email" type="email" placeholder="Email" required />
-      <Message
+      <input name="email" type="email" placeholder="Email" required />
+      <textarea
         name="message"
         placeholder="Message"
         rows="10"
@@ -68,7 +68,7 @@ const Contact = () => (
         required
       />
       <Submit type="submit">Send Message</Submit>
-    </Form>
+    </form>
   </Container>
 );
 
