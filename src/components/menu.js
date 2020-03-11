@@ -88,7 +88,7 @@ const Menu = () => {
           </Link>
         </Button>
         <Button>
-          <Link to="/projects/" aria-label="View contacts page">
+          <Link to="/contact/" aria-label="View contacts page">
             <Text>Contact</Text>
             <MailIcon
               style={{
