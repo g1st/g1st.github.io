@@ -7,4 +7,5 @@ export const breakpoints = {
 
 export const sizes = {
   headerHeight: "6rem",
+  footerHeight: "6rem",
 };
