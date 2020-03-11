@@ -3,7 +3,7 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import lightTheme from "prism-react-renderer/themes/nightOwlLight";
 import darkTheme from "prism-react-renderer/themes/nightOwl";
 import styled, { ThemeContext } from "styled-components";
-import { copyToClipboard } from "../../utils/copy-to-clipboard";
+import { copyToClipboard } from "../utils/copy-to-clipboard";
 
 export const Pre = styled.pre`
   text-align: left;

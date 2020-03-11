@@ -1,6 +1,6 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
-import SyntaxHighlighter from "./syntaxHighlighter";
+import SyntaxHighlighter from "./src/components/syntaxHighlighter";
 
 const components = {
   pre: props => <SyntaxHighlighter {...props} />,
