@@ -49,7 +49,7 @@ const encode = data =>
     .join("&");
 
 const Contact = () => {
-  const [state, setState] = React.useState({});
+  const [state, setState] = useState({});
 
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value });
@@ -58,7 +58,6 @@ const Contact = () => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -78,8 +77,16 @@ const Contact = () => {
       <Text>
         Have a question or looking to work together?Feel free to contact me!
       </Text>
-      <Form name="contact" method="POST" action="/thanks" data-netlify="true">
+      <Form
+        name="contact"
+        method="post"
+        action="/thanks"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSUbmit}
+      >
         <input type="hidden" name="form-name" value="contact" />
+        <Input hidden name="bot-field" onChange={handleChange} />
         <Input
           onChange={handleChange}
           name="email"
@@ -96,9 +103,7 @@ const Contact = () => {
           minLength="30"
           required
         />
-        <Submit type="submit" onSubmit={handleSubmit}>
-          Send Message
-        </Submit>
+        <Submit type="submit">Send Message</Submit>
       </Form>
     </Container>
   );
