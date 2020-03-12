@@ -17,7 +17,8 @@ const Text = styled.span`
   font-size: 0.8rem;
 
   a {
-    margin-left: 1rem;
+    margin-left: 0.6em;
+    padding: 0.4em;
   }
 `;
 
@@ -39,6 +40,7 @@ const Footer = () => (
         href="http://github.com/g1st"
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Go to github profile page"
       >
         <GitHubSVG />
       </a>

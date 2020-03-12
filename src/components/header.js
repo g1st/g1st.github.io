@@ -6,7 +6,7 @@ import styled, { ThemeContext } from "styled-components";
 import Navigation from "./navigation";
 import { media } from "../styles/mixins";
 import { sizes } from "../styles/variables";
-import ToggleIcon from "../assets/invert_colors-24px.svg";
+import Toggle from "../assets/invert_colors-24px.svg";
 import GSLogo from "../assets/gs-logo.svg";
 
 const Container = styled.header`
@@ -75,6 +75,14 @@ const LogoContainer = styled.div`
   align-items: center;
 `;
 
+const ToggleIcon = styled(Toggle)`
+  fill: ${({ theme }) => theme.colors.themeToggle};
+`;
+
+const GSLogoIcon = styled(GSLogo)`
+  fill: ${({ theme }) => theme.colors.themeToggle};
+`;
+
 const Header = ({ toggleTheme }) => {
   const theme = useContext(ThemeContext);
 
@@ -84,7 +92,7 @@ const Header = ({ toggleTheme }) => {
         <LogoContainer>
           <LogoButton title="Home" aria-label="Go to homepome">
             <Link to="/">
-              <GSLogo style={{ fill: theme.colors.themeToggle }} />
+              <GSLogoIcon />
             </Link>
           </LogoButton>
         </LogoContainer>
@@ -96,11 +104,9 @@ const Header = ({ toggleTheme }) => {
           title={
             theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
           }
+          onClick={toggleTheme}
         >
-          <ToggleIcon
-            style={{ fill: theme.colors.themeToggle }}
-            onClick={toggleTheme}
-          />
+          <ToggleIcon />
         </ToggleContainer>
       </ContentWrapper>
     </Container>
