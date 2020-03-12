@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import { media, Button } from "../../styles/mixins";
+import { media, AnchorLink } from "../../styles/mixins";
 import Tools from "./toolsUsed";
 
 const ProjectCard = styled.section`
@@ -60,7 +60,7 @@ const Buttons = styled.div`
   margin-bottom: 2rem;
 `;
 
-const PortfolioButton = styled(Button)`
+const Link = styled(AnchorLink)`
   margin-right: 2rem;
 
   &:last-child {
@@ -93,10 +93,22 @@ const Portfolio = () => {
             Jewellery artist's portfolio and an e-commerce app
           </CardInfo>
           <Buttons>
-            <PortfolioButton aria-label="View live page">Live</PortfolioButton>
-            <PortfolioButton aria-label="View page source">
+            <Link
+              aria-label="View live page"
+              href="https://dovilejewellery.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </Link>
+            <Link
+              aria-label="View page source"
+              href="https://github.com/g1st/do-next"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Source
-            </PortfolioButton>
+            </Link>
           </Buttons>
           <Tools mongo node express react nextjs material />
         </Desc>
@@ -111,10 +123,8 @@ const Portfolio = () => {
             Jewellery artist's portfolio and an e-commerce app
           </CardInfo>
           <Buttons>
-            <PortfolioButton aria-label="View live page">Live</PortfolioButton>
-            <PortfolioButton aria-label="View page source">
-              Source
-            </PortfolioButton>
+            <Link aria-label="View live page">Live</Link>
+            <Link aria-label="View page source">Source</Link>
           </Buttons>
           <Tools express react nextjs material />
         </Desc>
@@ -129,10 +139,8 @@ const Portfolio = () => {
             Jewellery artist's portfolio and an e-commerce app
           </CardInfo>
           <Buttons>
-            <PortfolioButton aria-label="View live page">Live</PortfolioButton>
-            <PortfolioButton aria-label="View page source">
-              Source
-            </PortfolioButton>
+            <Link aria-label="View live page">Live</Link>
+            <Link aria-label="View page source">Source</Link>
           </Buttons>
           <Tools express react nextjs />
         </Desc>
@@ -147,10 +155,8 @@ const Portfolio = () => {
             Jewellery artist's portfolio and an e-commerce app
           </CardInfo>
           <Buttons>
-            <PortfolioButton aria-label="View live page">Live</PortfolioButton>
-            <PortfolioButton aria-label="View page source">
-              Source
-            </PortfolioButton>
+            <Link aria-label="View live page">Live</Link>
+            <Link aria-label="View page source">Source</Link>
           </Buttons>
           <Tools />
         </Desc>
