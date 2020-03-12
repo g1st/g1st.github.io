@@ -11,7 +11,6 @@ import styled, { ThemeProvider } from "styled-components";
 
 import Header from "../components/header";
 import Footer from "../components/footer";
-import Menu from "../components/menu";
 import { dark, light } from "../styles/theme";
 import { GlobalStyle } from "../styles/globalStyle";
 import { useDarkMode } from "../hooks/useDarkTheme";
@@ -19,6 +18,7 @@ import "../styles/layout.css";
 
 const Main = styled.main`
   background-color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: auto;
 `;
 
 const ContentWrapper = styled.div`
@@ -27,7 +27,7 @@ const ContentWrapper = styled.div`
   min-height: 100vh;
 `;
 
-const Layout = ({ path, children }) => {
+const Layout = ({ children }) => {
   const [theme, setTheme, componentMounted] = useDarkMode();
 
   if (!componentMounted) {
@@ -39,8 +39,7 @@ const Layout = ({ path, children }) => {
       <ThemeProvider theme={theme === "dark" ? dark : light}>
         <GlobalStyle />
         <ContentWrapper>
-          <Header toggleTheme={setTheme} path={path} />
-          <Menu />
+          <Header toggleTheme={setTheme} />
           <Main>{children}</Main>
           <Footer />
         </ContentWrapper>

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import React, { useContext } from "react";
 import styled, { ThemeContext } from "styled-components";
 
+import Navigation from "./navigation";
 import { media } from "../styles/mixins";
 import { sizes } from "../styles/variables";
 import ToggleIcon from "../assets/invert_colors-24px.svg";
@@ -10,16 +11,27 @@ import GSLogo from "../assets/gs-logo.svg";
 
 const Container = styled.header`
   height: ${sizes.headerHeight};
+  display: flex;
+  align-items: center;
+`;
+
+const ContentWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1em;
+  z-index: 1;
+
+  ${media.sm`
+    padding: 0 3em;
+  `}
 `;
 
 const ToggleContainer = styled.button`
   background: none;
   border: none;
-  outline: none;
-  position: absolute;
-  top: 4%;
-  right: 5%;
-  z-index: 2;
+  display: flex;
+  align-items: center;
 
   ${media.xs`
   `}
@@ -40,57 +52,63 @@ const ToggleContainer = styled.button`
     }
   }
 `;
-const HomeContainer = styled.div`
-  position: absolute;
-  top: 4%;
-  left: 5%;
-  z-index: 2;
 
+const LogoButton = styled.div`
   ${media.xs`
-    /* top: 20%; */
   `}
 
   ${media.sm`
-    /* top: 30%; */
   `}
 
   &:hover {
     cursor: pointer;
   }
+
+  > a {
+    display: flex;
+    padding: 0.5em;
+  }
 `;
 
-const Header = ({ toggleTheme, path }) => {
+const LogoContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Header = ({ toggleTheme }) => {
   const theme = useContext(ThemeContext);
 
   return (
     <Container>
-      {path !== "/" && (
-        <HomeContainer title="Home" aria-label="Home">
-          <Link to="/">
-            <GSLogo style={{ fill: theme.colors.themeToggle }} />
-          </Link>
-        </HomeContainer>
-      )}
-      <ToggleContainer
-        aria-label={
-          theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
-        }
-        title={
-          theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
-        }
-      >
-        <ToggleIcon
-          style={{ fill: theme.colors.themeToggle }}
-          onClick={toggleTheme}
-        />
-      </ToggleContainer>
+      <ContentWrapper>
+        <LogoContainer>
+          <LogoButton title="Home" aria-label="Go to homepome">
+            <Link to="/">
+              <GSLogo style={{ fill: theme.colors.themeToggle }} />
+            </Link>
+          </LogoButton>
+        </LogoContainer>
+        <Navigation />
+        <ToggleContainer
+          aria-label={
+            theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
+          }
+          title={
+            theme.name === "dark" ? "Activate light mode" : "Activate dark mode"
+          }
+        >
+          <ToggleIcon
+            style={{ fill: theme.colors.themeToggle }}
+            onClick={toggleTheme}
+          />
+        </ToggleContainer>
+      </ContentWrapper>
     </Container>
   );
 };
 
 Header.propTypes = {
   toggleTheme: PropTypes.func.isRequired,
-  path: PropTypes.string.isRequired,
 };
 
 export default Header;
