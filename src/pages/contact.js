@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import SEO from "../components/seo";
@@ -21,7 +21,7 @@ const Form = styled.form`
 `;
 
 const Text = styled.p`
-  margin-top: 3rem;
+  margin: 3rem 0;
 `;
 
 const Input = styled.input`
@@ -47,7 +47,7 @@ const Contact = () => (
     <SEO title="Contact" />
     <Heading>Contact</Heading>
     <Text>
-      Have a question or looking to work together?Feel free to contact me!
+      Have a question or looking to work together? Feel free to contact me!
     </Text>
     <Form
       name="contact"

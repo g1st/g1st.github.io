@@ -44,7 +44,7 @@ const Desc = styled.div`
   `}
 
   ${media.md`
-    margin-left: 6rem;
+    margin-left: 4rem;
   `}
 `;
 
@@ -80,8 +80,6 @@ const Portfolio = () => {
       }
     }
   `);
-
-  console.log("data :", data);
 
   return (
     <>

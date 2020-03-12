@@ -9,15 +9,16 @@ const Container = styled.article`
   padding: 0 1rem;
   max-width: 48rem;
   margin: 0 auto;
-
-  ${media.md`
-    padding: 0 2.25rem;
-  `}
 `;
 
 const Heading = styled.h2`
-  text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
+  padding-left: 1rem;
+
+  ${media.xs`
+    text-align: center;
+    font-size: 3rem;
+  `}
 `;
 
 const ProjectsPage = ({ location }) => {

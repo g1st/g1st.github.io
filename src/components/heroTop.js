@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import TypeWriter from "./TypeWriter";
+import TypeWriter from "./typeWriter";
 import { media } from "../styles/mixins";
 
 const Container = styled.div`
@@ -16,7 +16,7 @@ const TextBlock = styled.div`
   transform: skewY(10deg);
   position: absolute;
   padding-right: 1.5rem;
-  top: 35%;
+  top: 45%;
   left: 20%;
 
   ${media.xs`
@@ -24,7 +24,7 @@ const TextBlock = styled.div`
   `}
 
   ${media.sm`
-    top: 45%;
+    top: 50%;
   `}
 `;
 

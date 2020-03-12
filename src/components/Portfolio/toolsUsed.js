@@ -14,7 +14,7 @@ const Tools = styled.div`
   border-radius: 3px;
   display: inline-flex;
   margin: 1rem 0;
-  max-width: 590px;
+  max-width: 22rem;
 `;
 
 const Tool = styled.div`
