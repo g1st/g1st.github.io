@@ -1,26 +1,49 @@
 import React from "react";
 import styled from "styled-components";
 
+import GitHub from "../assets/tools-svg/github.svg";
 import { sizes } from "../styles/variables";
 
-const Container = styled.footer`
+const FooterTag = styled.footer`
   width: 100%;
   height: ${sizes.footerHeight};
   background: ${({ theme }) => theme.colors.footer};
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: auto;
 `;
 
 const Text = styled.span`
   font-size: 0.8rem;
+
+  a {
+    margin-left: 1rem;
+  }
+`;
+
+const GitHubSVG = styled(GitHub)`
+  fill: ${({ theme }) => theme.colors.text};
+  width: 2.5rem;
+  height: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 const Footer = () => (
-  <Container>
-    <Text>&copy; Gintaras Stankus 2020</Text>
-  </Container>
+  <FooterTag>
+    <Text>
+      &copy; 2020 Gintaras Stankus
+      <a
+        href="http://github.com/g1st"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <GitHubSVG />
+      </a>
+    </Text>
+  </FooterTag>
 );
 
 export default Footer;
