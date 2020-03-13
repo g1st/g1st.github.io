@@ -7,6 +7,7 @@ export const dark = {
     text: "#ffffff",
     themeToggle: "#ffffff",
     footer: "#000000",
+    danger: "#f32013",
   },
 };
 
@@ -19,5 +20,6 @@ export const light = {
     text: "#2e2e2e",
     themeToggle: "#2e2e2e",
     footer: "#9fa9a3",
+    danger: "#c91d12",
   },
 };
