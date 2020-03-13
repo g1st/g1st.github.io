@@ -8,16 +8,18 @@ import Portfolio from "../components/Portfolio/portfolio";
 const Container = styled.article`
   padding: 0 1rem;
   max-width: 48rem;
-  margin: 0 auto;
+  margin: 0 auto 6rem auto;
 `;
 
 const Heading = styled.h2`
   font-size: 2rem;
   padding-left: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 
   ${media.xs`
-    text-align: center;
     font-size: 3rem;
+    margin-bottom: 4rem;
   `}
 `;
 
