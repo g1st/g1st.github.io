@@ -94,8 +94,8 @@ const Header = ({ toggleTheme }) => {
     <Container>
       <ContentWrapper>
         <LogoContainer>
-          <LogoButton title="Home" aria-label="Go to homepome">
-            <Link to="/">
+          <LogoButton title="Home">
+            <Link to="/" aria-label="Go to homepage">
               <GSLogoIcon />
             </Link>
           </LogoButton>

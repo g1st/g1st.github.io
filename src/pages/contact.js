@@ -104,11 +104,10 @@ const Contact = () => {
             action="https://getform.io/f/62f6d9a0-958e-4fe3-81c1-b0edb9d27639"
             onSubmit={handleSubmit(onSubmit)}
           >
-            <Label htmlFor="email">
+            <Label aria-label="Your email">
               <Input
                 name="email"
                 type="email"
-                id="email"
                 placeholder="Email"
                 ref={register({
                   validate: {
@@ -125,10 +124,9 @@ const Contact = () => {
                 <ErrorText>Entered email is not valid.</ErrorText>
               )}
             </Label>
-            <Label htmlFor="message">
+            <Label aria-label="Your message">
               <Message
                 name="message"
-                id="message"
                 placeholder="Message"
                 rows="10"
                 cols="50"
