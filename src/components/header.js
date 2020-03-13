@@ -13,6 +13,10 @@ const Container = styled.header`
   height: ${sizes.headerHeight};
   display: flex;
   align-items: center;
+
+  ${media.xs`
+    margin-bottom: 2rem;
+  `}
 `;
 
 const ContentWrapper = styled.div`
