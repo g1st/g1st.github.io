@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { useForm } from "react-hook-form";
+import { validEmailRegex } from "../utils/validEmailRegex";
 
 import SEO from "../components/seo";
 import { Button } from "../styles/mixins";
 
 const Container = styled.div`
   max-width: 42rem;
-  margin: 0 auto;
+  margin: 0 auto 8rem auto;
   padding: 0 2rem;
 `;
 
@@ -24,48 +26,130 @@ const Text = styled.p`
   margin: 3rem 0;
 `;
 
+const Label = styled.label`
+  margin-bottom: 3em;
+  width: 100%;
+`;
+
 const Input = styled.input`
   padding: 0.75rem 1.25rem;
-  margin-bottom: 3em;
   border-radius: 3px;
-  border: none;
+  width: 100%;
+  border: 3px solid
+    ${({ error, theme }) => (error ? theme.colors.danger : "transparent")};
 `;
 
 const Message = styled.textarea`
-  border: none;
+  width: 100%;
   border-radius: 3px;
   padding: 0.75rem 1.25rem;
-  margin-bottom: 3em;
+  border: 3px solid
+    ${({ error, theme }) => (error ? theme.colors.danger : "transparent")};
 `;
 
 const Submit = styled(Button)`
   max-width: 12em;
 `;
 
-const Contact = () => (
-  <Container>
-    <SEO title="Contact" />
-    <Heading>Contact</Heading>
-    <Text>
-      Have a question or looking to work together? Feel free to contact me!
-    </Text>
-    <Form
-      name="contact"
-      method="post"
-      action="https://getform.io/f/62f6d9a0-958e-4fe3-81c1-b0edb9d27639"
-    >
-      <Input name="email" type="email" placeholder="Email" required />
-      <Message
-        name="message"
-        placeholder="Message"
-        rows="10"
-        cols="50"
-        minLength="30"
-        required
-      />
-      <Submit type="submit">Send Message</Submit>
-    </Form>
-  </Container>
-);
+const ErrorText = styled.span`
+  font-size: 0.75em;
+  color: ${({ theme }) => theme.colors.danger};
+`;
+
+const Contact = () => {
+  const { register, handleSubmit, errors } = useForm();
+  const [submitted, setSubmitted] = useState(false);
+
+  const onSubmit = async (data, e) => {
+    e.preventDefault();
+    const url = e.target.action;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        referrerPolicy: "no-referrer",
+        body: JSON.stringify(data),
+      });
+
+      const res = await response.json();
+
+      if (res.success) {
+        e.target.reset();
+        setSubmitted(true);
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <Container>
+      <SEO title="Contact" />
+      <Heading>Contact</Heading>
+      {submitted ? (
+        <Text>Thanks for reaching out! I'll reach back to you very soon.</Text>
+      ) : (
+        <>
+          <Text>
+            Have a question or looking to work together? Feel free to contact
+            me!
+          </Text>
+          <Form
+            name="contact"
+            method="post"
+            action="https://getform.io/f/62f6d9a0-958e-4fe3-81c1-b0edb9d27639"
+            onSubmit={handleSubmit(onSubmit)}
+          >
+            <Label htmlFor="email">
+              <Input
+                name="email"
+                type="email"
+                id="email"
+                placeholder="Email"
+                ref={register({
+                  validate: {
+                    required: value => value.length > 0,
+                    invalidEmail: value => validEmailRegex.test(value),
+                  },
+                })}
+                error={!!errors.email}
+              />
+              {errors.email && errors.email.type === "required" && (
+                <ErrorText>Email is required.</ErrorText>
+              )}
+              {errors.email && errors.email.type === "invalidEmail" && (
+                <ErrorText>Entered email is not valid.</ErrorText>
+              )}
+            </Label>
+            <Label htmlFor="message">
+              <Message
+                name="message"
+                id="message"
+                placeholder="Message"
+                rows="10"
+                cols="50"
+                ref={register({ required: true, minLength: 20 })}
+                error={!!errors.message}
+              />
+              {errors.message && errors.message.type === "required" && (
+                <ErrorText>Message is required.</ErrorText>
+              )}
+              {errors.message && errors.message.type === "minLength" && (
+                <ErrorText>
+                  Message should have at least 20 characters.
+                </ErrorText>
+              )}
+            </Label>
+            <Submit type="submit">Send Message</Submit>
+          </Form>
+        </>
+      )}
+    </Container>
+  );
+};
 
 export default Contact;
