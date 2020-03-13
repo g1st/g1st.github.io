@@ -77,7 +77,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Open Sans\:400,600`],
+        fonts: [`Open Sans\:400,600`, `Merriweather\:400`],
         display: `swap`,
       },
     },
