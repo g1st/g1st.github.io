@@ -43,12 +43,12 @@ const Heading = styled.h1`
 const HeroTop = () => (
   <Container>
     <TextBlock>
-      <Heading>Hi, I am Johnatan</Heading>
+      <Heading>Hi, I am Gintaras</Heading>
       <TypeWriter
         messages={[
+          "javascript developer",
+          "web developer",
           "front end developer",
-          "back end developer",
-          "full stack developer",
         ]}
         speed={500}
       />
