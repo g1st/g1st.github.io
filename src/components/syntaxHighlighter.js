@@ -37,7 +37,7 @@ const CopyCode = styled.button`
   border-radius: 3px;
   margin: 0.25em;
   opacity: 0.3;
-  transition: all 0.1s linear;
+  transition: all 0.15s linear;
 
   &:hover {
     opacity: 1;

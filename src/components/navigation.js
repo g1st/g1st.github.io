@@ -31,7 +31,7 @@ const MenuButton = styled(GatsbyLink)`
   padding: 0.2em 0.5em;
   border: 2px solid ${({ theme }) => theme.colors.tertiary};
   border-radius: 3px;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
   display: inline-flex;
   margin: 0 auto;
 
