@@ -45,7 +45,16 @@ const HeroBottom = () => (
   <Container>
     <TextBlock>
       <Text>I create responsive web applications.</Text>
-      <Text>&#10084; javascript and &#127936;.</Text>
+      <Text>
+        <span role="img" aria-label="Heart">
+          &#10084;
+        </span>{" "}
+        javascript and{" "}
+        <span role="img" aria-label="Basketball">
+          &#127936;
+        </span>
+        .
+      </Text>
     </TextBlock>
   </Container>
 );
