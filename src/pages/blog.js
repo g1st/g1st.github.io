@@ -39,6 +39,7 @@ const Header = styled.header`
 
 const Image = styled(Img)`
   border-radius: 5px;
+  margin-bottom: 0.2em;
 `;
 
 const Blog = ({ data, location }) => {
@@ -53,7 +54,12 @@ const Blog = ({ data, location }) => {
         <BlogCard key={node.id}>
           <Header>
             {!!node.frontmatter.cover && (
-              <Image sizes={node.frontmatter.cover.childImageSharp.sizes} />
+              <Link
+                to={node.fields.slug}
+                aria-label={`View ${node.frontmatter.title} page`}
+              >
+                <Image sizes={node.frontmatter.cover.childImageSharp.sizes} />
+              </Link>
             )}
             <Title>
               <Link
