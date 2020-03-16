@@ -4,7 +4,7 @@ import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 import defaultOpenGraphImage from "../../static/gatsby-astronaut.png";
 
-const SEO = ({ description, lang, meta, title, image, slug }) => {
+const SEO = ({ description, lang, meta, title, image, slug, type }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -65,7 +65,7 @@ const SEO = ({ description, lang, meta, title, image, slug }) => {
         },
         {
           property: `og:type`,
-          content: `website`,
+          content: type || `website`,
         },
         {
           property: `og:inLanguage`,
@@ -110,6 +110,7 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
   slug: PropTypes.string,
+  type: PropTypes.string,
 };
 
 export default SEO;

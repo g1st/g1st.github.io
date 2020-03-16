@@ -54,6 +54,7 @@ const Blog = ({ data, pageContext, location }) => {
         description={frontmatter.description || excerpt}
         image={coverPath}
         slug={pageContext.slug}
+        type="article"
       />
       <Article>
         <Header>
