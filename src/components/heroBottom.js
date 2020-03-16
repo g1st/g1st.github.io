@@ -27,6 +27,8 @@ const Text = styled.p`
   text-align: right;
   max-width: 600px;
   margin-left: auto;
+  margin-right: 1em;
+
   line-height: 1.75;
 
   ${media.sm`
@@ -42,10 +44,8 @@ const Text = styled.p`
 const HeroBottom = () => (
   <Container>
     <TextBlock>
-      <Text>
-        I'm a developer with a passion for full-stack web development.
-      </Text>
-      <Text>I &#10084; javascript and minimalistic UI/UX.</Text>
+      <Text>I create responsive web applications.</Text>
+      <Text>&#10084; javascript and &#127936;.</Text>
     </TextBlock>
   </Container>
 );
