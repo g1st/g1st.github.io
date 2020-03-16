@@ -91,12 +91,15 @@ const Contact = () => {
       <SEO title="Contact" />
       <Heading>Contact</Heading>
       {submitted ? (
-        <Text>Thanks for reaching out! I'll reach back to you very soon.</Text>
+        <Text>
+          Thank you for reaching out! I will get back to you as soon as
+          possible.
+        </Text>
       ) : (
         <>
           <Text>
-            Have a question or looking to work together? Feel free to contact
-            me!
+            Have a question, need a responsive web app or looking to work
+            together? Feel free to contact me!
           </Text>
           <Form
             name="contact"

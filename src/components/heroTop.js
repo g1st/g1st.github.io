@@ -46,9 +46,9 @@ const HeroTop = () => (
       <Heading>Hi, I am Gintaras</Heading>
       <TypeWriter
         messages={[
-          "javascript developer",
           "web developer",
-          "front end developer",
+          "javascript developer",
+          "front-end developer",
         ]}
         speed={500}
       />
