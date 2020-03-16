@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   p {
-    line-height: 1.15;
+    line-height: 1.6;
   }
   
   a {
