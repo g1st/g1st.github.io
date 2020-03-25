@@ -7,7 +7,7 @@ import { media } from "../styles/mixins";
 import SEO from "../components/seo";
 
 const Container = styled.div`
-  margin: 0 auto;
+  margin: 3rem auto;
   max-width: 42rem;
   padding: 0 2rem;
 `;
