@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useContext } from "react";
+import styled, { ThemeContext } from "styled-components";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
@@ -11,10 +11,6 @@ const ProjectCard = styled.section`
   border-radius: 3px;
   border-bottom: 3px solid ${({ theme }) => theme.colors.tertiary};
   margin-bottom: 1rem;
-
-  :last-child {
-    border-bottom: none;
-  }
 
   ${media.xs`
     display: flex;
@@ -71,21 +67,25 @@ const Link = styled(AnchorLink)`
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "dovilejewellery.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 325) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+      dovileJewellery: file(relativePath: { eq: "dovilejewellery.png" }) {
+        ...mobileFrame
+      }
+      portfolioLight: file(relativePath: { eq: "portfolio-light.png" }) {
+        ...mobileFrame
+      }
+      portfolioDark: file(relativePath: { eq: "portfolio-dark.png" }) {
+        ...mobileFrame
       }
     }
   `);
+
+  const theme = useContext(ThemeContext);
 
   return (
     <>
       <ProjectCard>
         <ImageWrapper>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          <Img fluid={data.dovileJewellery.childImageSharp.fluid} />
         </ImageWrapper>
         <Desc>
           <CardTitle>Dovile Jewellery</CardTitle>
@@ -115,50 +115,40 @@ const Portfolio = () => {
       </ProjectCard>
       <ProjectCard>
         <ImageWrapper>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          {theme.name === "dark" ? (
+            <Img fluid={data.portfolioDark.childImageSharp.fluid} />
+          ) : (
+            <Img fluid={data.portfolioLight.childImageSharp.fluid} />
+          )}
         </ImageWrapper>
         <Desc>
-          <CardTitle>Dovile Jewellery</CardTitle>
+          <CardTitle>Portfolio site</CardTitle>
           <CardInfo>
-            Jewellery artist's portfolio and an e-commerce app
+            Portfolio which you are currently looking at{" "}
+            <span role="img" aria-label="Smiley face">
+              🙃
+            </span>
+            .
           </CardInfo>
           <Buttons>
-            <Link aria-label="View live page">Live</Link>
-            <Link aria-label="View page source">Source</Link>
+            <Link
+              aria-label="View live page"
+              href="https://dovilejewellery.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Live
+            </Link>
+            <Link
+              aria-label="View page source"
+              href="https://github.com/g1st/do-next"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source
+            </Link>
           </Buttons>
-          <Tools express react nextjs material />
-        </Desc>
-      </ProjectCard>
-      <ProjectCard>
-        <ImageWrapper>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-        </ImageWrapper>
-        <Desc>
-          <CardTitle>Dovile Jewellery</CardTitle>
-          <CardInfo>
-            Jewellery artist's portfolio and an e-commerce app
-          </CardInfo>
-          <Buttons>
-            <Link aria-label="View live page">Live</Link>
-            <Link aria-label="View page source">Source</Link>
-          </Buttons>
-          <Tools express react nextjs />
-        </Desc>
-      </ProjectCard>
-      <ProjectCard>
-        <ImageWrapper>
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-        </ImageWrapper>
-        <Desc>
-          <CardTitle>Dovile Jewellery</CardTitle>
-          <CardInfo>
-            Jewellery artist's portfolio and an e-commerce app
-          </CardInfo>
-          <Buttons>
-            <Link aria-label="View live page">Live</Link>
-            <Link aria-label="View page source">Source</Link>
-          </Buttons>
-          <Tools />
+          <Tools react gatsby graphql styled />
         </Desc>
       </ProjectCard>
     </>
