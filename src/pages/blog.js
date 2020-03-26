@@ -3,12 +3,17 @@ import styled from "styled-components";
 import Img from "gatsby-image";
 import { Link, graphql } from "gatsby";
 
+import { media } from "../styles/mixins";
 import SEO from "../components/seo";
 
 const Container = styled.div`
   margin: 0 auto;
   max-width: 42rem;
   padding: 0 2rem;
+
+  ${media.sm`
+    margin-top: 2rem;
+  `}
 `;
 
 const Heading = styled.h2`
