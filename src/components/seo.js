@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import defaultOpenGraphImage from "../../static/gatsby-astronaut.png";
+import defaultOpenGraphImage from "../../static/portfolio-light.png";
 
 const SEO = ({ description, lang, meta, title, image, slug, type }) => {
   const { site } = useStaticQuery(
