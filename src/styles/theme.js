@@ -1,12 +1,12 @@
 export const dark = {
   name: "dark",
   colors: {
-    primary: "#31263E",
-    secondary: "#44355B",
-    tertiary: "#C42021",
+    secondary: "#596869",
+    primary: "#282C35",
+    tertiary: "#C8963E",
     text: "#ffffff",
     themeToggle: "#ffffff",
-    footer: "#000000",
+    footer: "#020202",
     danger: "#f32013",
   },
 };
