@@ -108,8 +108,8 @@ export const pageQuery = graphql`
         title
         cover {
           childImageSharp {
-            fixed {
-              src
+            fixed(traceSVG: { color: "#639" }) {
+              tracedSVG
             }
           }
         }
