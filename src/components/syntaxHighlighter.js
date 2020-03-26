@@ -12,7 +12,6 @@ export const Pre = styled.pre`
   overflow-x: auto;
   border-radius: 3px;
   position: relative;
-  overflow: hidden;
 
   & .token-line {
     line-height: 1.3em;
