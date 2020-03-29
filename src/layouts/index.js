@@ -31,9 +31,9 @@ const Layout = ({ children }) => {
     <>
       <ThemeProvider theme={theme === "dark" ? dark : light}>
         <GlobalStyle />
-        <ContentWrapper>
+        <ContentWrapper className="test-entry">
           <Header toggleTheme={setTheme} />
-          <Main>{children}</Main>
+          <Main role="main">{children}</Main>
           <Footer />
         </ContentWrapper>
       </ThemeProvider>

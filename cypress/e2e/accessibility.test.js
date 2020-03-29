@@ -2,9 +2,8 @@
 
 describe("Accessibility tests", () => {
   beforeEach(() => {
-    cy.visit("/")
-      .get("#___gatsby")
-      .injectAxe();
+    cy.visit("/").get(".test-entry");
+    cy.injectAxe();
   });
   it("Has no detectable accessibility violations on load", () => {
     cy.checkA11y();
@@ -18,7 +17,11 @@ describe("Accessibility tests", () => {
     cy.findByLabelText(/View blog page/).click();
     cy.findByText(/First Post/i)
       .click()
-      .checkA11y();
+      .checkA11y({
+        rules: {
+          "color-contrast": { enabled: false },
+        },
+      });
   });
   it("Navigates to /projects and checks for accessibility violations", () => {
     cy.findByLabelText(/View projects page/)
