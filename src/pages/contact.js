@@ -12,7 +12,7 @@ const Container = styled.div`
   padding: 0 2rem;
 `;
 
-const Heading = styled.h2`
+const Heading = styled.h1`
   font-size: 3rem;
   text-align: center;
 `;

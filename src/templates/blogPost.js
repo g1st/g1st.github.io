@@ -18,7 +18,7 @@ const Article = styled.article`
   padding-bottom: 2rem;
 `;
 
-const Heading = styled.h2`
+const Heading = styled.h1`
   margin-bottom: 0;
   font-size: 3rem;
 `;

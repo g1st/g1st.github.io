@@ -11,7 +11,7 @@ const Container = styled.article`
   margin: 0 auto 6rem auto;
 `;
 
-const Heading = styled.h2`
+const Heading = styled.h1`
   font-size: 3rem;
   padding-left: 1rem;
   text-align: center;

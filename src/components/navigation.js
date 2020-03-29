@@ -75,7 +75,7 @@ const MailIcon = styled(Mail)`
 `;
 
 const Navigation = () => (
-  <Nav>
+  <Nav role="navigation" aria-label="Navigation">
     <Menu>
       <MenuItem>
         <MenuButton to="/blog" aria-label="View blog page">
@@ -85,12 +85,14 @@ const Navigation = () => (
       </MenuItem>
       <MenuItem>
         <MenuButton to="/projects" aria-label="View projects page">
-          <LinkText>Projects</LinkText> <CodeIcon />
+          <LinkText>Projects</LinkText>
+          <CodeIcon />
         </MenuButton>
       </MenuItem>
       <MenuItem>
         <MenuButton to="/contact" aria-label="View contact page">
-          <LinkText>Contact</LinkText> <MailIcon />
+          <LinkText>Contact</LinkText>
+          <MailIcon />
         </MenuButton>
       </MenuItem>
     </Menu>

@@ -16,7 +16,7 @@ const Container = styled.div`
   `}
 `;
 
-const Heading = styled.h2`
+const Heading = styled.h1`
   text-align: center;
   font-size: 3rem;
   margin-bottom: 4rem;
@@ -26,7 +26,7 @@ const BlogCard = styled.article`
   margin-bottom: 8rem;
 `;
 
-const Title = styled.h3`
+const Title = styled.h2`
   font-size: 2rem;
   margin-bottom: 0;
 

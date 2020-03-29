@@ -44,7 +44,7 @@ const Desc = styled.div`
   `}
 `;
 
-const CardTitle = styled.h3`
+const CardTitle = styled.h2`
   font-size: 2rem;
 `;
 
@@ -85,7 +85,10 @@ const Portfolio = () => {
     <>
       <ProjectCard>
         <ImageWrapper>
-          <Img fluid={data.dovileJewellery.childImageSharp.fluid} />
+          <Img
+            fluid={data.dovileJewellery.childImageSharp.fluid}
+            alt="Screenshot of dovilejewellery.com website"
+          />
         </ImageWrapper>
         <Desc>
           <CardTitle>Dovile Jewellery</CardTitle>
@@ -116,9 +119,15 @@ const Portfolio = () => {
       <ProjectCard>
         <ImageWrapper>
           {theme.name === "dark" ? (
-            <Img fluid={data.portfolioDark.childImageSharp.fluid} />
+            <Img
+              fluid={data.portfolioDark.childImageSharp.fluid}
+              alt="Screenshot of personal website"
+            />
           ) : (
-            <Img fluid={data.portfolioLight.childImageSharp.fluid} />
+            <Img
+              fluid={data.portfolioLight.childImageSharp.fluid}
+              alt="Screenshot of personal website"
+            />
           )}
         </ImageWrapper>
         <Desc>
