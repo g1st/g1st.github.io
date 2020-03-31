@@ -1,4 +1,3 @@
-module.exports = {};
 module.exports = {
   transform: {
     "^.+\\.jsx?$": `<rootDir>/tests/jest-preprocess.js`,
