@@ -37,14 +37,7 @@ const SEO = ({ description, lang, meta, title, image, slug, type }) => {
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
-      link={[
-        { rel: `canonical`, href: url },
-        {
-          href:
-            "https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans:wght@400;600&display=swap",
-          rel: "stylesheet",
-        },
-      ]}
+      link={[{ rel: `canonical`, href: url }]}
       meta={[
         {
           name: `description`,

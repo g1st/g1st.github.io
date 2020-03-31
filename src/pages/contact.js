@@ -56,7 +56,7 @@ const ErrorText = styled.span`
   color: ${({ theme }) => theme.colors.danger};
 `;
 
-const Contact = () => {
+const Contact = ({ location }) => {
   const { register, handleSubmit, errors } = useForm();
   const [submitted, setSubmitted] = useState(false);
 
@@ -88,7 +88,7 @@ const Contact = () => {
 
   return (
     <Container>
-      <SEO title="Contact" />
+      <SEO title="Contact" slug={location.pathname} />
       <Heading>Contact</Heading>
       {submitted ? (
         <Text>
