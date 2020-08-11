@@ -55,7 +55,7 @@ const Blog = ({ data, location }) => {
       <SEO title="Blog" slug={location.pathname} />
       <Heading>Blog</Heading>
 
-      {posts.map(node => (
+      {posts.map((node) => (
         <BlogCard key={node.id}>
           <Header>
             {!!node.frontmatter.cover && (

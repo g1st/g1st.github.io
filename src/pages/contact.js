@@ -119,8 +119,8 @@ const Contact = ({ location }) => {
                 placeholder="Email"
                 ref={register({
                   validate: {
-                    required: value => value.length > 0,
-                    invalidEmail: value => validEmailRegex.test(value),
+                    required: (value) => value.length > 0,
+                    invalidEmail: (value) => validEmailRegex.test(value),
                   },
                 })}
                 error={!!errors.email}

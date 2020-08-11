@@ -32,7 +32,7 @@ const TypeWriter = ({ messages, heading }) => {
   useEffect(() => {
     let timer;
     const handleType = () => {
-      setState(currentState => ({
+      setState((currentState) => ({
         ...currentState,
         text: getCurrentText(currentState),
         typingSpeed: getTypingSpeed(currentState),
@@ -49,7 +49,7 @@ const TypeWriter = ({ messages, heading }) => {
     if (!state.isDeleting && state.text === state.message) {
       if (state.loopNum !== messages.length) {
         const changeToDeleting = () => {
-          setState(currentState => ({
+          setState((currentState) => ({
             ...currentState,
             isDeleting: true,
           }));
@@ -59,7 +59,7 @@ const TypeWriter = ({ messages, heading }) => {
       }
     } else if (state.isDeleting && state.text === "") {
       const changeToTyping = () => {
-        setState(currentState => ({
+        setState((currentState) => ({
           ...currentState,
           isDeleting: false,
           loopNum: currentState.loopNum + 1,
@@ -75,7 +75,7 @@ const TypeWriter = ({ messages, heading }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.text, state.message, state.isDeleting, messages]);
 
-  const getCurrentText = currentState =>
+  const getCurrentText = (currentState) =>
     currentState.isDeleting
       ? currentState.message.substring(0, currentState.text.length - 1)
       : currentState.message.substring(0, currentState.text.length + 1);
@@ -83,7 +83,7 @@ const TypeWriter = ({ messages, heading }) => {
   const getMessage = (currentState, data) =>
     data[Number(currentState.loopNum) % Number(data.length)];
 
-  const getTypingSpeed = currentState =>
+  const getTypingSpeed = (currentState) =>
     currentState.isDeleting ? CONSTANTS.TYPING_SPEED : CONSTANTS.DELETING_SPEED;
 
   return <Text>{state.text}</Text>;

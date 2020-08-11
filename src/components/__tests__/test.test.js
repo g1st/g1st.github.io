@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import { dark } from "../../styles/theme";
 
 const Button = styled.button`
-  color: ${props => props.theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
 `;
 
 const Title = () => <Button theme={dark}>Tests are working</Button>;
