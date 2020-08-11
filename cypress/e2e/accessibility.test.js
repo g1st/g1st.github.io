@@ -20,7 +20,7 @@ describe("Accessibility tests in dark mode", () => {
     cy.findByLabelText(/View blog page/).click();
     cy.findByText(/First Post/i)
       .click()
-      .checkA11y({
+      .checkA11y(null, {
         rules: {
           "color-contrast": { enabled: false },
         },
@@ -55,7 +55,7 @@ describe("Accessibility tests in light mode", () => {
     cy.findByLabelText(/View blog page/).click();
     cy.findByText(/First Post/i)
       .click()
-      .checkA11y({
+      .checkA11y(null, {
         rules: {
           "color-contrast": { enabled: false },
         },

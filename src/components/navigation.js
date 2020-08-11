@@ -58,6 +58,7 @@ const MenuButton = styled(GatsbyLink)`
 `;
 
 const LinkText = styled.span`
+  color: ${({ theme }) => theme.colors.textDark};
   display: none;
   margin: 0 auto;
 `;

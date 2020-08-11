@@ -7,10 +7,14 @@ import { media, AnchorLink } from "../../styles/mixins";
 import Tools from "./toolsUsed";
 
 const ProjectCard = styled.section`
-  padding: 2rem 1rem;
+  padding: 6rem 1rem;
   border-radius: 3px;
   border-bottom: 3px solid ${({ theme }) => theme.colors.tertiary};
-  margin-bottom: 1rem;
+  margin-top: 1.65rem;
+
+  &:first-of-type {
+    padding-top: 3rem;
+  }
 
   ${media.xs`
     display: flex;
@@ -142,7 +146,7 @@ const Portfolio = () => {
           <Buttons>
             <Link
               aria-label="View live page"
-              href="https://dovilejewellery.com"
+              href="https://g1st.github.io/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -150,7 +154,7 @@ const Portfolio = () => {
             </Link>
             <Link
               aria-label="View page source"
-              href="https://github.com/g1st/do-next"
+              href="https://github.com/g1st/g1st.github.io"
               target="_blank"
               rel="noopener noreferrer"
             >

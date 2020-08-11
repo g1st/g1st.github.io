@@ -83,25 +83,22 @@ const HeightWrapper = styled.div`
 
 const LineOne = styled.p`
   font-size: 1.25rem;
-
-  ${media.sm`
+  color: ${({ theme }) => theme.colors.textDark};
+   ${media.sm`
     font-size: 1.5rem;
     margin-right: 6rem;
-  `}
-
-  ${media.lg`
+  `} ${media.lg`
     font-size: 2rem;
-  `}
-
-  ${media.xl`
+  `} ${media.xl`
     font-size: 2.5rem;
     margin-right: 14rem;
 
-  `}
+  `};
 `;
 
 const LineTwo = styled.p`
   font-size: 1.25rem;
+  color: ${({ theme }) => theme.colors.textDark};
 
   ${media.sm`
     font-size: 1.5rem;
@@ -128,6 +125,8 @@ const Hero = () => (
             "web developer",
             "javascript developer",
             "front-end developer",
+            "back-end developer",
+            "full-stack developer",
           ]}
           speed={500}
         />

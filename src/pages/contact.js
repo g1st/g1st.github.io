@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useForm } from "react-hook-form";
-import { validEmailRegex } from "../utils/validEmailRegex";
 
+import { validEmailRegex } from "../utils/validEmailRegex";
+import { media } from "../styles/mixins";
 import SEO from "../components/seo";
 import { Button } from "../styles/mixins";
 
@@ -10,6 +11,10 @@ const Container = styled.div`
   max-width: 42rem;
   margin: 0 auto 8rem auto;
   padding: 0 2rem;
+
+  ${media.sm`
+    margin-top: 2rem;
+  `}
 `;
 
 const Heading = styled.h1`

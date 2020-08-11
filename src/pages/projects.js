@@ -9,6 +9,10 @@ const Container = styled.article`
   padding: 0 1rem;
   max-width: 48rem;
   margin: 0 auto 6rem auto;
+
+  ${media.sm`
+    margin-top: 2rem;
+  `}
 `;
 
 const Heading = styled.h1`
